@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
     def index
-       render html: "HOME", status: :ok 
+        @articles = Article.all
     end
 
     def show
