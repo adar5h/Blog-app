@@ -11,11 +11,11 @@
 
     <tbody>
         <% @articles.each do |article| %>
-        <tr>
-            <th><%= article.title %></th>
-            <th><%= article.description %></th>
-            <th> Placeholder</th>
-        </tr>
+            <tr>
+                <td><%= article.title %></td>
+                <td><%= article.description %></td>
+                <td> Placeholder</td>
+            </tr>
         <% end %>
     </tbody>
 </table>
