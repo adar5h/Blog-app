@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   root "articles#index"
 
-  resources :articles, only: [:show, :index, :new, :create, :edit, :update]
+  resources :articles # resourcers provides RESTful routes to rails resources
 end

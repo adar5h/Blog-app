@@ -14,7 +14,9 @@
             <tr>
                 <td><%= article.title %></td>
                 <td><%= article.description %></td>
-                <td> Placeholder</td>
+                <td><%= link_to 'Show',  article_path(article)%></td>
+                <td><%= link_to 'Edit', article_path(article), data: { "turbo-method": :patch } %></td>
+                <td><%= link_to 'Delete', article_path(article),data: { "turbo-method": :delete }%></td> <%# have to specify the method otherwise GET method will be used and show action will work.%>
             </tr>
         <% end %>
     </tbody>
