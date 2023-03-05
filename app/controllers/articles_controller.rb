@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
         # debugger
         # @article = Article.new(params[:article]) // Wrong way to create a article, use strong params instead.
         @article = Article.new(article_params)
+        @article.user = User.first #Assigning user to each newly created article
         if @article.save
             flash[:notice] = "Your Article was Created"
             redirect_to @article
