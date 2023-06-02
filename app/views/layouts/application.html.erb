@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Blog</title>
+    <%= link_to 'Set Cookie', cookies_set_cookie_path %>
+    <%= link_to 'Set Cookie', cookies_set_cookie_path, id: 'set-cookie-link' %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,4 +16,5 @@
   <%= render 'layouts/flash' %>
     <%= yield %>
   </body>
+ <%= javascript_include_tag 'set_cookie' %> 
 </html>
