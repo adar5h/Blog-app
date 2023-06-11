@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # get 'cookies/set_cookie', defaults: { format: :js }
 
   resources :articles # resourcers provides RESTful routes to rails resources
+  # REST - Representational state transfer - mapping http verbs(FE) (get, post, patch/put, destroy) to CRUD operations. 
   get 'signup', to: 'users#new' # new route for users
   resources :users, except: [:new] #new is already defined
 end

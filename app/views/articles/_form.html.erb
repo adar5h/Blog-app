@@ -7,7 +7,7 @@
   </ul>
 <%end%>
  
-<%= form_with(model: @article, local: true) do |f| %>
+<%= form_with(model: @article, local: true) do |f| %> <!-- Form_with submits the form with AJAX -->
   <p> 
     <%= f.label :title %><br/> 
     <%= f.text_field :title %>
