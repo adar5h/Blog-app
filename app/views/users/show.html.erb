@@ -3,9 +3,9 @@
 
     <%= gravatar_for @user, size: 200 %>
     <br>
-
+    <% if logged_in? && @user == current_user%>
     <%= link_to "Edit Profile", edit_user_path, class: "btn btn-outline-info" %>
-
+    <% end %>
     <h3>Articles</h3>
 
      <br>
