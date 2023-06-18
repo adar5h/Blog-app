@@ -1,3 +1,12 @@
 <h1>Article Listing page</h1>
-
+    <br>
+    <div class="flickr_pagination">
+        <%= will_paginate @articles, :container => false %>
+    </div>
+    <br>
 <%= render 'article' %>
+    <br>
+    <div class="flickr_pagination">
+        <%= will_paginate @articles, :container => false %>
+    </div>
+    <br>

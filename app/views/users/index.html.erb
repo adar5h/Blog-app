@@ -2,6 +2,11 @@
 
 <div class="container">
 <center>
+  <br>
+    <div class="flickr_pagination">
+        <%= will_paginate @articles, :container => false %>
+    </div>
+  <br>
   <% @users.each do |user| %>
     <div class="row justify-content-md-center" style="border: 2px solid powderblue;">
       <div class="col-8 mt-4">
@@ -23,5 +28,10 @@
       </div>
     </div>
   <% end %>
+  <br>
+    <div class="flickr_pagination">
+        <%= will_paginate @users, :container => false %>
+    </div>
+  <br>
   </center>
 </div>
