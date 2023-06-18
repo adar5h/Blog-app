@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   resources :users, except: [:new] #new is already defined
 
   get '/adarsh', to: redirect('https://www.github.com/adar5h')
+
+  # We won't be creating resourceful routes for sessions
+  # Sessions logging in/out won't be hitting the Database
+  get 'login', to: 'sessions#new'
+  post 'login', to: "sessions#create"
+  delete 'logout', to: "sessions#destroy"
 end
