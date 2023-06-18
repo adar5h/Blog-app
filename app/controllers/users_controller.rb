@@ -24,7 +24,6 @@ class UsersController < ApplicationController
     end
 
     def create
-        # debugger
         @user = User.new(user_params)
         if @user.save
             flash[:notice] = "Welcome to the blog #{@user.username}, you have successfully created your account."
