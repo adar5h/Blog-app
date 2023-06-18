@@ -1,7 +1,12 @@
-<h1> <center><%= @user.username%>'s Profile </center></h1>
+<center>
+    <h1> <%= @user.username%>'s Profile </h1>
 
-<center><%= gravatar_for @user, size: 200 %></center>
+    <%= gravatar_for @user, size: 200 %>
+    <br>
 
-<h3><center>Articles</center></h3>
+    <%= link_to "Edit Profile", edit_user_path, class: "btn btn-outline-info" %>
 
-<%= render 'articles/article' %>
+    <h3>Articles</h3>
+
+    <%= render 'articles/article' %>
+</center>
