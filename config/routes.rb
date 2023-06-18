@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   # REST - Representational state transfer - mapping http verbs(FE) (get, post, patch/put, destroy) to CRUD operations. 
   get 'signup', to: 'users#new' # new route for users
   resources :users, except: [:new] #new is already defined
+
+  get '/adarsh', to: redirect('https://www.github.com/adar5h')
 end
