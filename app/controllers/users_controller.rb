@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
     before_action :set_user , only: [:edit, :update, :show]
-    before_action :is_user?, only: [:edit, :update, :destroy]
+    before_action :require_user, only: [:edit, :update]
+    before_action :require_same_user, only: [:edit, :update]
     def new 
         @user = User.new
     end
@@ -47,14 +48,10 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
-    def is_user?
-        if current_user.blank?
-            flash[:alert] = "You must first login!"
-            return redirect_to login_path
-        end
+    def require_same_user
         if current_user != @user
-            flash[:alert] = "You can only edit your own profile!"
-            redirect_to users_path
+            flash[:alert] = "You can only update or delete your own article."
+            redirect_to @user
         end
     end
 end
