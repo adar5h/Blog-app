@@ -2,6 +2,8 @@ class ArticlesController < ApplicationController
     
     before_action :set_article, only: [:show, :update, :edit, :destroy]
     skip_before_action :verify_authenticity_token
+    before_action :require_user, except: [:show, :index] # The order of these two befoer action methods matter
+    before_action :require_same_user, only: [:update, :destroy, :edit]
 
 
     def index
@@ -54,6 +56,13 @@ class ArticlesController < ApplicationController
 
     def article_params
         params.require(:article).permit(:title, :description)
+    end
+
+    def require_same_user
+        if current_user != @article.user
+            flash[:alert] = "You can only update or delete your own article."
+            redirect_to @article
+        end
     end
 
 end

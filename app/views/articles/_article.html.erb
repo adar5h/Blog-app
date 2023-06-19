@@ -6,6 +6,7 @@
         <div class="card text-center shadow mb-5 bg-white rounded">
           <div class="card-header font-italic">
           <% if article.user %>
+          <br>
             by <%= link_to article.user.username, user_path(article.user) %>
           <%end%>
           </div>
@@ -22,6 +23,7 @@
             <small>Created <%= time_ago_in_words(article.created_at) %> ago, 
             edited <%= time_ago_in_words(article.updated_at) %> ago</small>
           </div>
+          <br>
         </div>
       </div>
     </div>
