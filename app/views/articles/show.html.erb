@@ -6,7 +6,7 @@
     <p>Created by: <strong><%= @article.user.username %></strong></p>
     <p><%= link_to gravatar_for(@article.user), user_path(@article.user) %></p>
 
-        <% if logged_in? && @article.user == current_user%>
+        <% if logged_in? && (@article.user == current_user || current_user.admin? )%>
             <%= link_to "Edit", edit_article_path(@article) %> |
             <%= link_to "Delete", article_path(@article), data: {'turbo-method': :delete } %> |
         <% end %>   

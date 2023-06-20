@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <div class="topnav">
+  <div class="topnav", width: 100%>
     <a class="active"<%= link_to "Adarsh's Blog", adarsh_path, class: "btn btn-success btn-lg" %></a>
     <%= link_to "Home", root_path, class: "btn btn-success btn-lg" %>
     <%= link_to "Bloggers", users_path, class: "btn btn-success btn-lg" %>
@@ -10,6 +10,7 @@
       <%= link_to "Create article", new_article_path, class: "btn btn-success btn-lg" %>
       <%= link_to current_user.username, user_path(current_user),  class: "btn btn-success btn-lg" %>
       <%= link_to "Logout", logout_path, data: {'turbo-method': :delete },  class: "btn btn-success btn-lg" %>
+      <p style="color: white"><%= "(Admin)" if current_user.admin?%></p>
     <% else %>
       <%= link_to "Login", login_path, class: "btn btn-success btn-lg" %>
       <%= link_to "Sign up!", signup_path, class: "btn btn-success btn-lg" %>
