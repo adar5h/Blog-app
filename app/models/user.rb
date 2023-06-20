@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :articles
+    has_many :articles, dependent: :destroy # specifying that associated records should be destroyed when the parent record is destroyed
     has_secure_password
     before_save {self.email = email.downcase} # self because we're referring to each object of the user class
     before_save {self.username = username.slice(0).capitalize + username.slice(1..-1) }

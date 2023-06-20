@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
     before_action :set_user , only: [:edit, :update, :show]
     before_action :require_user, only: [:edit, :update]
-    before_action :require_same_user, only: [:edit, :update]
+    before_action :require_same_user, only: [:edit, :update, :destroy]
     def new 
         @user = User.new
     end
@@ -38,6 +38,13 @@ class UsersController < ApplicationController
         end
     end
 
+    def destroy
+        @user.destroy if current_user == @user
+        sesson[:user_id] = nil
+        flash[:alert] = "Your account and all the associated articles have been deleted."
+        redirect_to login_path
+    end
+
     private 
 
     def user_params
@@ -51,7 +58,7 @@ class UsersController < ApplicationController
     def require_same_user
         if current_user != @user
             flash[:alert] = "You can only update or delete your own article."
-            redirect_to @user
+            redirect_to user_path
         end
     end
 end
