@@ -7,19 +7,18 @@
     <%end%>
   </ul>
 <%end%>
- 
 <%= form_with(model: @user, local: true) do |f| %>
   <p> 
     <%= f.label :username %><br/> 
-    <%= f.text_field :username , placeholder: "Enter username" %>
+    <%= f.text_field :username , placeholder: "Enter username", style:"padding:10px; border: 1px solid black; border-radius: 10px;" %>
   </p>
   <p>
     <%= f.label :email %><br/> 
-    <%= f.email_field :email , placeholder: "Enter email"%> 
+    <%= f.email_field :email , placeholder: "Enter email", style:"padding:10px; border: 1px solid black; border-radius: 10px;"%> 
   </p>
   <p>
     <%= f.label :password %><br/> 
-    <%= f.password_field :password, placeholder: "Enter password" %> 
+    <%= f.password_field :password, placeholder: "Enter password" , style:"padding:10px; border: 1px solid black; border-radius: 10px;"%> 
   </p>
   <p>
     <%=f.submit(@user.new_record? ? "Sign Up!" : "Update account!") %> 

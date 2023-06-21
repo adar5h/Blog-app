@@ -1,9 +1,10 @@
 <div class="container">
 <center>
   <% @articles.each do |article| %>
-    <div class="row justify-content-md-center" style="border: 2px solid powderblue;">
+    <div class="row justify-content-md-center" style="border: 1.5px solid black;">
       <div class="col-8 mt-4">
-        <div class="card text-center shadow mb-5 bg-white rounded">
+      <br>
+        <div class="card text-center shadow mb-5 bg-white rounded", style="padding:30px; color: black; background: whitesmoke; border: 1px solid black; border-radius:10px; width: 50%;">
           <div class="card-header font-italic">
           <% if article.user %>
           <br>
@@ -25,6 +26,7 @@
           </div>
           <br>
         </div>
+        <br>
       </div>
     </div>
   <% end %>

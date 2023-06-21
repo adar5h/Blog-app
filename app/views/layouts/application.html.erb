@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <div class="radial-gradient", style="height:100%">
   <head>
   <div class="topnav", width: 100%>
     <a class="active"<%= link_to "Adarsh's Blog", adarsh_path, class: "btn btn-success btn-lg" %></a>
@@ -36,6 +37,7 @@
     <%= yield %>
   </body>
  <%= javascript_include_tag 'set_cookie' %> 
+ </div>
 </html>
 
 <style>
@@ -43,6 +45,10 @@
 body {
    margin: 0;
    padding: 0;
+   background: 
+    radial-gradient(
+     at center, #3498db, #9b59b6
+    );
 }
 /* Add a black background color to the top navigation */
 .topnav {
@@ -70,5 +76,40 @@ body {
 .topnav a.active {
   background-color: #04AA6D;
   color: white;
+}
+
+.radial-gradient {
+  position:relative;
+  top:0px;
+  left:0px;
+  height:100%;
+  width:100%;
+  
+  /*Fallback if gradeints don't work */
+  background: #9b59b6;
+  /*Linear gradient... */
+  background: 
+    radial-gradient(
+     at center, #3498db, #9b59b6
+    );
+}
+
+.headings{
+  padding:20px;
+  color: black; 
+  background: whitesmoke; 
+  border: 1px solid black; 
+  border-radius:10px; 
+  width: 10%
+}
+.smallheadings{
+  padding:10px; 
+  border: 1px solid black; 
+  border-radius: 10px; 
+  width: 150px; 
+  background: whitesmoke;
+}
+.imgborder{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width:80px;
 }
 </style>

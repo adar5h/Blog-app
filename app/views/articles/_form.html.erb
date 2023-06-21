@@ -10,11 +10,11 @@
 <%= form_with(model: @article, local: true) do |f| %> <!-- Form_with submits the form with AJAX -->
   <p> 
     <%= f.label :title %><br/> 
-    <%= f.text_field :title %>
+    <%= f.text_field :title, style:"padding:10px; border: 1px solid black; border-radius: 10px;" %>
   </p>
   <p>
-    <%= f.label :description %><br/> 
-    <%= f.text_area :description %> 
+    <%= f.label :description  %><br/> 
+    <%= f.text_area :description, style:"padding:10px; border: 1px solid black; border-radius: 10px;" %> 
   </p>
   <p>
     <%=f.submit %> 

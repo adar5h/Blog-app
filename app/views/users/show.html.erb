@@ -1,19 +1,19 @@
 <center>
-    <h1> <%= @user.username%>'s Profile </h1>
+    <h1 class="headings", style="width:300px;"> <%= @user.username%>'s Profile </h1>
 
     <%= gravatar_for @user, size: 200 %>
     <br>
     <% if logged_in? && @user == current_user%>
-    <%= link_to "Edit Profile", edit_user_path, class: "btn btn-outline-info" %> |
-    <%= link_to "Delete Profile", user_path(current_user), data: {'turbo-method': :delete }, class: "btn btn-outline-info" %>
+    <p class="smallheadings", style="width:300px;"><%= link_to "Edit Profile", edit_user_path, class: "btn btn-outline-info" %> |
+    <%= link_to "Delete Profile", user_path(current_user), data: {'turbo-method': :delete }, class: "btn btn-outline-info" %></p>
     <% end %>
-    <h3>Articles</h3>
+    <br><br >
+    <h3 class="smallheadings">Articles</h3>
 
      <br>
         <div class="flickr_pagination">
             <%= will_paginate @articles, :container => false %>
         </div>
-     <br>
 
     <%= render 'articles/article' %>
 

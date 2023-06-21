@@ -1,14 +1,14 @@
 <center>
-<h1>Login for Blog</h1>
+<h1 style="padding:30px; color: black; background: whitesmoke; border: 1px solid black; border-radius:10px; width: 20%;">Login for Blog</h1>
  
 <%= form_with(scope: :session, url: :login) do |f| %>
   <p>
     <%= f.label :email %><br/> 
-    <%= f.email_field :email , placeholder: "Enter your email"%> 
+    <%= f.email_field :email , placeholder: "Enter your email", style:"padding:10px; border: 1px solid black; border-radius: 10px;"%> 
   </p>
   <p>
     <%= f.label :password %><br/> 
-    <%= f.password_field :password, placeholder: "Enter your password" %> 
+    <%= f.password_field :password, placeholder: "Enter your password", style:"padding:10px; border: 1px solid black; border-radius: 10px;" %> 
   </p>
   <p>
     <%=f.submit "Sign In!" %> 

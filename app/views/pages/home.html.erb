@@ -1,11 +1,21 @@
 <div class="container" id="home-container">
 <center>
   <div class="jumbotron text-center text-white">
-    <h1 class="display-4">Blog</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <h1 class="headings" >Blog</h1>
+    <p class="lead" style="color:white">This is a simple blog webiste. You can create your account and share your articles and thoughts.</p>
     <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <%= link_to "Sign up!", signup_path, class: "btn btn-success btn-lg" %>
+    <p style="color:white">I believe in freedom of speech, so bring on your wildest opinions and yeah, excuse the boring UI, my main aim was to get the Backend right, but you can expect a decent UI in my coming projects.</p>
+    <div class="fotorama"
+        data-allowfullscreen="true">
+      <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/", width=600 ,height=400, style="border: 1px solid black; border-radius:10px;">
+      <%
+=begin%>
+ <img src="https://ucarecdn.com/a9ed82c6-14f1-462e-849e-3b007c2aae87/"> 
+<%
+=end%>
+    </div>
+    <br>
+    <%= link_to "Sign up!", signup_path, class: "btn btn-success btn-lg", style:"padding:5px; border: 1px solid black; border-radius: 10px; background: whitesmoke;" %>
   </div>
   </center>
 </div>

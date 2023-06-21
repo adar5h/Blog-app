@@ -1,13 +1,16 @@
-<center><h1>Article Listing page</h1>
-    <br>
-    <div class="flickr_pagination">
-        <%= will_paginate @articles, :container => false %>
-    </div>
-    <br>
-<%= render 'article' %>
-    <br>
-    <div class="flickr_pagination">
-        <%= will_paginate @articles, :container => false %>
-    </div>
-    <br>
+<html>
+    <center>
+        <h1 style = "padding:30px; color: black; background: white; border: 1px solid black; border-radius:20px; width: 20%;">Article Listing page</h1>
+        <br>
+        <div class="flickr_pagination">
+            <%= will_paginate @articles, :container => false %>
+        </div>
+            <br>
+                <%= render 'article' %>
+            <br>
+        <div class="flickr_pagination">
+            <%= will_paginate @articles, :container => false %>
+        </div>
+        <br>
     </center>
+</html>

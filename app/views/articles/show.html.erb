@@ -1,15 +1,15 @@
 <center>
-    <h1>Showing Article details </h1>
+    <h1 class="headings", style="width:500px">Showing Article details </h1>
 
-    <p>Title: <strong><%= @article.title %></strong></p>
-    <p>Description: <strong><%= @article.description %></strong></p>
-    <p>Created by: <strong><%= @article.user.username %></strong></p>
-    <p><%= link_to gravatar_for(@article.user), user_path(@article.user) %></p>
+    <p class = "smallheadings" ">Title: <strong><%= @article.title %></strong></p>
+    <p class = "smallheadings" ">Description: <strong><%= @article.description %></strong></p>
+    <p class = "smallheadings" ">Created by: <strong><%= @article.user.username %></strong></p>
+    <p style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width:80px;"><%= link_to gravatar_for(@article.user), user_path(@article.user) %></p>
 
         <% if logged_in? && (@article.user == current_user || current_user.admin? )%>
-            <%= link_to "Edit", edit_article_path(@article) %> |
-            <%= link_to "Delete", article_path(@article), data: {'turbo-method': :delete } %> |
+            <p class= "smallheadings"><%= link_to "Edit", edit_article_path(@article)%> |
+            <%= link_to "Delete", article_path(@article), data: {'turbo-method': :delete } %></p> 
         <% end %>   
-            <%= link_to "Return to articles listing", articles_path %>
+           <p class= "smallheadings", style="width:200px"> <%= link_to "Return to articles listing", articles_path %> </p>
 </center>
     
