@@ -1,0 +1,21 @@
+<% if @category.errors.any?%>
+<%= puts "Entering error zone" %>
+  <h2>The following errors prevented the category from being saved.</h2>
+  
+    <% @category.errors.full_messages.each do |msg| %>
+        
+        <%= "There is an error while saving the category." %>
+      <%= msg %>
+      <li><%= msg %></li>
+    <%end%>
+  
+<%end%>
+<%= form_with(model: @category, local: true) do |f| %>
+  <p> 
+    <%= f.label :name, "Category Name" %><br/> 
+    <%= f.text_field :name , placeholder: "Category name", style:"padding:10px; border: 1px solid black; border-radius: 10px;" %>
+  </p>
+  <p>
+    <%=f.submit %> 
+  </p>
+<% end %>

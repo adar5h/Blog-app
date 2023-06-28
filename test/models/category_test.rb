@@ -4,6 +4,7 @@ class CateogoryTest < ActiveSupport::TestCase
 
     def setup
         @category = Category.new(name: "Sports") #instance variable in tests will be scrubbed as soon as the function completes,
+                                                 # therefore instance variable has to be declared in each test
                                                  # but to comply DRY we use setup method 
     end 
 
@@ -11,7 +12,7 @@ class CateogoryTest < ActiveSupport::TestCase
         assert @category.valid?
     end
 
-    test "category should be present" do
+    test "category name should be present" do
         @category.name = ""
         assert_not @category.valid?
     end
