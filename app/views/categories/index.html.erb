@@ -1,0 +1,16 @@
+<html>
+    <center>
+        <h1 style = "padding:30px; color: black; background: white; border: 1px solid black; border-radius:20px; width: 20%;">Categories</h1>
+        <br>
+        <div class="flickr_pagination">
+            <%= will_paginate @categories, :container => false %>
+        </div>
+            <br>
+                <%= render 'category' %>
+            <br>
+        <div class="flickr_pagination">
+            <%= will_paginate @categories, :container => false %>
+        </div>
+        <br>
+    </center>
+</html>
