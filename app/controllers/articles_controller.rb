@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        # debugger
+        debugger
         # @article = Article.new(params[:article]) // Wrong way to create a article, use strong params instead.
         @article = Article.new(article_params)
         # @article.user = User.first #Assigning user to each newly created article
@@ -55,7 +55,7 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-        params.require(:article).permit(:title, :description, category_id: [])
+        params.require(:article).permit(:title, :description, category_ids: [])
     end
 
     def require_same_user

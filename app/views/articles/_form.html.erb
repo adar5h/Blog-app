@@ -17,6 +17,11 @@
     <%= f.text_area :description, style:"padding:10px; border: 1px solid black; border-radius: 10px;" %> 
   </p>
   <p>
+    <%= f.label :category  %><br/> 
+    <%= f.collection_select :category_ids, Category.all, :id, :name,
+    {prompt: "Select a category(can be empty)"}, {multiple: true, style:"padding:10px; border: 1px solid black; border-radius: 10px;"} %>
+  </p>
+  <p>
     <%=f.submit %> 
   </p>
 <% end %>
