@@ -10,6 +10,10 @@
           <br>
             by <%= link_to article.user.username, user_path(article.user) %>
           <%end%>
+          <br><br>
+           <%if article.categories%>
+                <%=render article.categories%>
+            <%end%>
           </div>
           <div class="card-body">
             <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>

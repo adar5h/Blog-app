@@ -3,6 +3,9 @@
 
     <p class = "smallheadings" ">Title: <strong><%= @article.title %></strong></p>
     <p class = "smallheadings" ">Description: <strong><%= @article.description %></strong></p>
+    <%if @article.categories %>
+        <%= render @article.categories %>
+    <% end %>
     <p class = "smallheadings" ">Created by: <strong><%= @article.user.username %></strong></p>
     <p style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width:80px;"><%= link_to gravatar_for(@article.user), user_path(@article.user) %></p>
 
