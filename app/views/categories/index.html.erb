@@ -15,6 +15,7 @@
                             <div class="card text-center shadow mb-5 bg-white rounded", style="padding:30px; color: black; background: whitesmoke; border: 1px solid black; border-radius:10px; width: 50%;">
                             <div class="card-body">
                                 <h5 class="card-title"><%= link_to category.name, category_path(category), class: "text-success" %></h5>
+                                <p class="card-text" style="background:whitesmoke; width:100px; border: 1px solid black; border-radius: 10px;"><%=  pluralize(category.articles.count, "article") %></p>
                             </div>
                             <div class="card-footer text-muted">
                                 <small>Created <%= time_ago_in_words(category.created_at) %> ago, 
